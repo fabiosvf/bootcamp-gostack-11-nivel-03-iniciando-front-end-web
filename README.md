@@ -294,7 +294,6 @@ module.exports = {
 ```
 /*.js
 ```
-
 ---
 ## Padrões de Projeto
 
