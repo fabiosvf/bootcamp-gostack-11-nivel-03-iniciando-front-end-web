@@ -305,6 +305,17 @@ $ yarn add styled-components
 ```
 $ yarn add @types/styled-components -D
 ```
+- Instale a extensão `vcode-styled-components` no Visual Studio Code
+- Acesse o site [Google Fonts](https://fonts.google.com/), localize a fonte `Roboto Slab`, selecione os estilos `Regular 400` e `Medium 500`, em seguida, na lateral direita, copie o link gerado automaticamente e cole dentro da tag `head` abaixo da tag `title` dentro do arquivo `public/index.html`
+```
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+```
+- Abra o arquivo `.eslintrc.json` na raiz do projeto, localize a sessão `rules` e adicione o parâmetro abaixo:
+  - Esse parâmetro desativa a obrigatoriedade em definir um `export default`. Esse recurso é importante quando trabalhamos com `styled-components` pois podemos exportar vários estilos em um único arquivo onde nenhum, em específico, será `default`.
+```
+"import/prefer-default-export": "off"
+```
+
 ---
 ## Padrões de Projeto
 
