@@ -294,6 +294,17 @@ module.exports = {
 ```
 /*.js
 ```
+### Estrutura das páginas
+
+#### Estilos globais
+- Instale a biblioteca `styled-components`
+```
+$ yarn add styled-components
+```
+- Instale a biblioteca `@types/styled-components` como dependência de desenvolvimento
+```
+$ yarn add @types/styled-components -D
+```
 ---
 ## Padrões de Projeto
 
@@ -321,10 +332,12 @@ module.exports = {
 - [react-dom](https://yarnpkg.com/package/react-dom)
 - [react-icons](https://yarnpkg.com/package/react-icons)
 - [react-scripts](https://yarnpkg.com/package/react-scripts)
+- [styled-components](https://yarnpkg.com/package/styled-components)
 - [typescript](https://yarnpkg.com/package/typescript)
 - [web-vitals](https://yarnpkg.com/package/web-vitals)
 
 #### Dependências de Desenvolvimento
+- [@types/styled-components](https://yarnpkg.com/package/@types/styled-components)
 - [@typescript-eslint/eslint-plugin](https://yarnpkg.com/package/@typescript-eslint/eslint-plugin)
 - [@typescript-eslint/parser](https://yarnpkg.com/package/@typescript-eslint/parser)
 - [eslint](https://yarnpkg.com/package/eslint)
