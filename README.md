@@ -1,46 +1,357 @@
-# Getting Started with Create React App
+####  Bootcamp - GoStack 11
+# 🚀 Nível 03 - Iniciando Front-End Web (GoBarber Web)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Sobre
 
-## Available Scripts
+- Durante esse módulo criaremos a versão web da aplicação GoBarber que será utilizada pelos usuários que prestam serviços dentro da aplicação
 
-In the project directory, you can run:
+---
+## Roteiro
 
-### `yarn start`
+- Nesta seção será descrito o roteiro com todos os passos para criação do projeto em ReactJS com TypeScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Criando o projeto
+- Crie uma pasta
+- Acesse a pasta em modo terminal
+- Digite o seguinte comando para iniciar o projeto à partir de um template padrão contendo várias ferramentas como Babbel e WebPack já configuradas:
+```
+$ yarn create react-app nome-do-projeto --template typescript
+```
+- Abra a pasta do projeto no Visual Studio Code
+```
+$ code .
+```
+### Configurando a versão inicial do projeto
+- Apague os seguintes arquivos que foram gerados automaticamente à partir do comando `create react_app`
+```
+public\favicon.ico
+public\logo192.png
+public\logo512.png
+public\manifest.json
+src\App.css
+src\App.test.tsx
+src\index.css
+src\logo.svg
+src\reportWebVitals.ts
+```
+- Acesse o arquivo `public\index.html` e mantenha o seguinte código:
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3A3A3A" />
+    <title>GoBarber Web</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+```
+- Acesse o arquivo `src\App.tsx` e mantenha o seguinte código:
+```ts
+import React from 'react';
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+function App() {
+  return (
+    <h1>Hello World</h1>
+  );
+}
 
-### `yarn test`
+export default App;
+```
+- Acesse o arquivo `src\index.tsx` e mantenha o seguinte código:
+```ts
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+### Configurando padrões de projeto com ESLint, Prettier e EditorConfig
 
-### `yarn build`
+#### Configurando o EditorConfig
+- Instale a extensão `EditorConfig for VS Code` no Visual Studio Code
+- Crie o arquivo `.editorconfig` na raiz do projeto com o seguinte conteúdo:
+```
+root = true
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Configurando o ESLint
+- Instale a extensão `ESLint` no Visual Studio Code
+- Abra o arquivo `settings.json` pressionando `CTRL + P` e digitando o nome do arquivo.
+- Adicione o trecho abaixo no final do arquivo:
+```
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+```
+- Abra o arquivo `package.json` localizado na raiz do projeto
+- Localize e remova o seguinte trecho de configuração:
+```
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+```
+- Instale a biblioteca `eslint` como dependência de desenvolvimento:
+```
+$ yarn add eslint -D
+```
+- Inicie o assistente de configuração do ESLint digitando o seguinte comando:
+```
+$ yarn eslint --init
+```
+- Responda as perguntas com as seguintes informações:
+  - How would you like to use ESLint? `To check syntax, find problems, and enforce code style`
+  - What type of module does your project use? `JavaScrtipt modules (import/export)`
+  - Which framework does your project use? `React`
+  - Does your project use TypeScript? `Yes`
+  - Where does your code run? `Browser`
+  - How would you like to define a style for your project? `Use a popular style guide`
+  - Which style guide do you want to foloow? `Airbnb: https://github.com/airbnb/javascript`
+  - What format do you want your config file to be in? `JSON`
+  - Would you like to install them now with npm? `No`
+- Copie as linhas de comando sugeridas pelo assistente para realizar a instalação das bibliotecas de forma manual
+  - No meu caso, as bibliocas sugeridas para instalação foram:
+```
+eslint-plugin-react@^7.21.5 @typescript-eslint/eslint-plugin@latest eslint-config-airbnb@latest eslint@^5.16.0 || ^6.8.0 || ^7.2.0 eslint-plugin-import@^2.22.1 eslint-plugin-jsx-a11y@^6.4.1 eslint-plugin-react-hooks@^4 || ^3 || ^2.3.0 || ^1.7.0 @typescript-eslint/parser@latest
+```
+- Remova, da sugestão de instalação, a referência completa à instalação da biblioteca `eslint`. No meu caso são essas versões:
+```
+eslint@^5.16.0 || ^6.8.0 || ^7.2.0
+```
+- Remova, da sugestão de instalação, a referência à versões anteriores para a biblioteca `eslint-plugin-react-hooks` e mantenha apenas a versão mais atual
+```
+De
+eslint-plugin-react-hooks@^4 || ^3 || ^2.3.0 || ^1.7.0
+Para
+eslint-plugin-react-hooks@^4
+```
+- Instale as bibliotecas manualmente
+```
+yarn add -D eslint-plugin-react@^7.21.5 @typescript-eslint/eslint-plugin@latest eslint-config-airbnb@latest eslint-plugin-import@^2.22.1 eslint-plugin-jsx-a11y@^6.4.1 eslint-plugin-react-hooks@^4 @typescript-eslint/parser@latest
+```
+- Crie o arquivo `.eslintignore` na raiz do projeto com o seguinte conteúdo:
+```
+**/*.js
+node_modules
+build
+/src/react-app-env.d.ts
+/src/reportWebVitals.ts
+```
+- Na raiz do projeto, localize o arquivo `.eslintrc.json` e dentro da sessão `extends` adicione o seguinte trecho de código:
+```
+"plugin:@typescript-eslint/recommended"
+```
+- Ainda no arquivo `.eslintrc.json` adicione o seguinte código dentro da sessão `plugins`:
+```
+"react-hooks"
+```
+- Para finalizar o ajuste no arquivo `.eslintrc.json` adicione o código abaixo dentro da sessão `rules`:
+```
+"react-hooks/rules-of-hooks": "error",
+"react-hooks/exhaustive-deps": "warn",
+"react/jsx-filename-extension": [
+	1,
+	{
+	"extensions": [
+		".tsx"
+	]
+	}
+],
+"no-use-before-define": "off",
+"@typescript-eslint/no-use-before-define": [
+	"error"
+],
+"react/react-in-jsx-scope": "off"
+```
+- Instale a biblioteca `eslint-import-resolver-typescript` como dependência de desenvolvimento:
+```
+$ yarn add eslint-import-resolver-typescript -D
+```
+- Abra novamente o arquivo de configuração `.eslintrc.json` e adicione o seguinte código na sessão `rules`:
+```
+"import/extensions": [
+    "error",
+    "ignorePackages",
+    {
+      "ts": "never",
+      "tsx": "never"
+    }
+ ]
+```
+- Ainda no arquivo `.eslintrc.json`, logo abaixo da sessão `rules` adicione o seguinte código:
+```
+"settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Configurando o Prettier
+- Desinstale a extensão `Prettier - Code Formatter` caso a mesma esteja instalada
+- Instale as seguintes bibliotecas como dependências de desenvolvimento:
+```
+$ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+```
+- Na sessão `extends` do arquivo de configuração `.eslintrc.json` adicione o seguinte código:
+```
+"prettier/@typescript-eslint",
+"plugin:prettier/recommended"
+```
+- Ainda no mesmo arquivo de configuração adicione o seguinte código na sessão `rules`:
+```
+"prettier/prettier": "error"
+```
+- O código final do arquivo `.eslintrc.json` deverá ficar parecido com o conteúdo abaixo:
+```json
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [
+        1,
+        {
+        "extensions": [
+          ".tsx"
+        ]
+        }
+      ],
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": [
+        "error"
+      ],
+      "react/react-in-jsx-scope": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+     ],
+     "prettier/prettier": "error"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+}
+```
+- Crie o arquivo `prettier.config.js` na raiz do projeto e adicione o seguinte código:
+```
+module.exports = {
+  singleQuote: true,
+  trailingComma: 'all',
+	arrowParens: 'avoid',
+}
+```
+- Crie ou edite o arquivo `.eslintignore` na raiz do projeto e adicione a seguinte regra:
+```
+/*.js
+```
 
-### `yarn eject`
+---
+## Padrões de Projeto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Introdução
+- [Padrões de projeto com ESLint, Prettier e EditorConfig](docs/Padr%C3%B5es%20de%20projeto%20com%20ESLint%2C%20Prettier%20e%20EditorConfig.pdf)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Ferramentas para padronização de código
+- [EditorConfig](docs/EditorConfig.pdf)
+- [ESLint](docs/ESLint.pdf)
+- [Prettier](docs/Prettier.pdf)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Tecnologias utilizadas
 
-## Learn More
+#### Dependências de Projeto
+- [@testing-library/jest-dom](https://yarnpkg.com/package/@testing-library/jest-dom)
+- [@testing-library/react](https://yarnpkg.com/package/@testing-library/react)
+- [@testing-library/user-event](https://yarnpkg.com/package/@testing-library/user-event)
+- [@types/jest](https://yarnpkg.com/package/@types/jest)
+- [@types/node](https://yarnpkg.com/package/@types/node)
+- [@types/react](https://yarnpkg.com/package/@types/react)
+- [@types/react-dom](https://yarnpkg.com/package/@types/react-dom)
+- [react](https://yarnpkg.com/package/react)
+- [react-dom](https://yarnpkg.com/package/react-dom)
+- [react-icons](https://yarnpkg.com/package/react-icons)
+- [react-scripts](https://yarnpkg.com/package/react-scripts)
+- [typescript](https://yarnpkg.com/package/typescript)
+- [web-vitals](https://yarnpkg.com/package/web-vitals)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Dependências de Desenvolvimento
+- [@typescript-eslint/eslint-plugin](https://yarnpkg.com/package/@typescript-eslint/eslint-plugin)
+- [@typescript-eslint/parser](https://yarnpkg.com/package/@typescript-eslint/parser)
+- [eslint](https://yarnpkg.com/package/eslint)
+- [eslint-config-airbnb](https://yarnpkg.com/package/eslint-config-airbnb)
+- [eslint-config-prettier](https://yarnpkg.com/package/eslint-config-prettier)
+- [eslint-import-resolver-typescript](https://yarnpkg.com/package/eslint-import-resolver-typescript)
+- [eslint-plugin-import](https://yarnpkg.com/package/eslint-plugin-import)
+- [eslint-plugin-jsx-a11y](https://yarnpkg.com/package/eslint-plugin-jsx-a11y)
+- [eslint-plugin-prettier](https://yarnpkg.com/package/eslint-plugin-prettier)
+- [eslint-plugin-react](https://yarnpkg.com/package/eslint-plugin-react)
+- [eslint-plugin-react-hooks](https://yarnpkg.com/package/eslint-plugin-react-hooks)
+- [prettier](https://yarnpkg.com/package/prettier)
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Como executar
+- Crie uma pasta para o projeto
+- Acesse a pasta
+- Faça o clone do projeto
+```
+$ git clone https://github.com/fabiosvf/bootcamp-gostack-11-nivel-03-iniciando-front-end-web.git .
+```
+- Atualize as bibliotecas
+```
+$ yarn
+```
+- Para iniciar a aplicação web, digite:
+```
+$ yarn start
+```
