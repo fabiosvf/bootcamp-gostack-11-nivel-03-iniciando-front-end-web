@@ -315,7 +315,15 @@ $ yarn add @types/styled-components -D
 ```
 "import/prefer-default-export": "off"
 ```
-
+#### Página de login
+- Instale a biblioteca `react-icons`
+```
+$ yarn add react-icons
+```
+- Instale a biblioteca `polished`
+```
+$ yarn add polished
+```
 ---
 ## Padrões de Projeto
 
@@ -339,6 +347,7 @@ $ yarn add @types/styled-components -D
 - [@types/node](https://yarnpkg.com/package/@types/node)
 - [@types/react](https://yarnpkg.com/package/@types/react)
 - [@types/react-dom](https://yarnpkg.com/package/@types/react-dom)
+- [polished](https://yarnpkg.com/package/polished)
 - [react](https://yarnpkg.com/package/react)
 - [react-dom](https://yarnpkg.com/package/react-dom)
 - [react-icons](https://yarnpkg.com/package/react-icons)
