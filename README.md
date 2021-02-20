@@ -347,6 +347,12 @@ $ yarn add yup
 ```
 $ yarn add @types/yup -D
 ```
+#### Exibindo erros no Input
+- Abra o arquivo `.eslintrc.json` localize a sessão `rules` e adicione o seguinte parâmetro
+  - Essa regra foi desabilitada, porque em alguns momentos, o `eslint` confundo o caracter `?` como um `if ternário` ao invés de `property nullable`
+```
+"no-unused-expressions": "off",
+```
 ---
 ## Padrões de Projeto
 
