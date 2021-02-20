@@ -338,6 +338,15 @@ $ yarn add polished
 ```
 $ yarn add @unform/core @unform/web
 ```
+#### Validando cadastro
+- Instale a biblioteca `yup`
+```
+$ yarn add yup
+```
+- Instale a biblioteca `@types/yup` como dependência de desenvolvimento
+```
+$ yarn add @types/yup -D
+```
 ---
 ## Padrões de Projeto
 
@@ -371,9 +380,11 @@ $ yarn add @unform/core @unform/web
 - [styled-components](https://yarnpkg.com/package/styled-components)
 - [typescript](https://yarnpkg.com/package/typescript)
 - [web-vitals](https://yarnpkg.com/package/web-vitals)
+- [yup](https://yarnpkg.com/package/yup)
 
 #### Dependências de Desenvolvimento
 - [@types/styled-components](https://yarnpkg.com/package/@types/styled-components)
+- [@types/yup](https://yarnpkg.com/package/@types/yup)
 - [@typescript-eslint/eslint-plugin](https://yarnpkg.com/package/@typescript-eslint/eslint-plugin)
 - [@typescript-eslint/parser](https://yarnpkg.com/package/@typescript-eslint/parser)
 - [eslint](https://yarnpkg.com/package/eslint)
