@@ -324,6 +324,15 @@ $ yarn add react-icons
 ```
 $ yarn add polished
 ```
+#### Isolando componentes
+- Abra o arquivo `.eslintrc.json` localize a sessão `rules` e acrescente a seguinte regra:
+  - Caso insira os parâmetros no final das regras, então remova a última vírgula.
+  - O primeiro parâmetro foi desabilitado para permitir passar `props` para um componente
+  - O segundo parâmetro desabilita a necessidade de implementar a tipagem `prop-types` porque o `typescript` já está responsável por isso
+```
+"react/jsx-props-no-spreading": "off",
+"react/prop-types": "off",
+```
 ---
 ## Padrões de Projeto
 
