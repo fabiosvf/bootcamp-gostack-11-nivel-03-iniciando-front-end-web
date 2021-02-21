@@ -4,6 +4,8 @@
 ## Sobre
 
 - Durante esse módulo criaremos a versão web da aplicação GoBarber que será utilizada pelos usuários que prestam serviços dentro da aplicação
+- A aplicação irá consumir a API Back-end Node.js abaixo
+  - [Back-end - GoBarber](https://github.com/fabiosvf/bootcamp-gostack-11-nivel-02-iniciando-back-end-do-app)
 
 ---
 ## Roteiro
