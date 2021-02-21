@@ -355,6 +355,12 @@ $ yarn add @types/yup -D
 ```
 "no-unused-expressions": "off",
 ```
+### Autenticação
+#### Login pelo Contexto
+- Instale a biblioteca `axios`
+```
+$ yarn add axios
+```
 ---
 ## Padrões de Projeto
 
@@ -366,6 +372,8 @@ $ yarn add @types/yup -D
 - [ESLint](docs/ESLint.pdf)
 - [Prettier](docs/Prettier.pdf)
 
+#### React Hooks e Context API
+- [React Hooks e Context API](docs/ReactHooksContextAPI.pdf)
 ---
 
 ## Tecnologias utilizadas
@@ -380,6 +388,7 @@ $ yarn add @types/yup -D
 - [@types/react-dom](https://yarnpkg.com/package/@types/react-dom)
 - [@unform/core](https://yarnpkg.com/package/@unform/core)
 - [@unform/web](https://yarnpkg.com/package/@unform/web)
+- [axios](https://yarnpkg.com/package/axios)
 - [polished](https://yarnpkg.com/package/polished)
 - [react](https://yarnpkg.com/package/react)
 - [react-dom](https://yarnpkg.com/package/react-dom)
