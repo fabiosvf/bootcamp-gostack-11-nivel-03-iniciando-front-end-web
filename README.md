@@ -361,6 +361,12 @@ $ yarn add @types/yup -D
 ```
 $ yarn add axios
 ```
+### Mensagens de toast
+#### Adicionando e removendo Toasts
+- Instale a biblioteca `uuidv4`
+```
+$ yarn add uuidv4
+```
 ---
 ## Padrões de Projeto
 
@@ -396,6 +402,7 @@ $ yarn add axios
 - [react-scripts](https://yarnpkg.com/package/react-scripts)
 - [styled-components](https://yarnpkg.com/package/styled-components)
 - [typescript](https://yarnpkg.com/package/typescript)
+- [uuidv4](https://yarnpkg.com/package/uuidv4)
 - [web-vitals](https://yarnpkg.com/package/web-vitals)
 - [yup](https://yarnpkg.com/package/yup)
 
