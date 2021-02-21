@@ -367,6 +367,11 @@ $ yarn add axios
 ```
 $ yarn add uuidv4
 ```
+#### Animando Toasts
+- Instale a biblioteca `react-spring`
+```
+$ yarn add react-spring
+```
 ---
 ## Padrões de Projeto
 
@@ -400,6 +405,7 @@ $ yarn add uuidv4
 - [react-dom](https://yarnpkg.com/package/react-dom)
 - [react-icons](https://yarnpkg.com/package/react-icons)
 - [react-scripts](https://yarnpkg.com/package/react-scripts)
+- [react-spring](https://yarnpkg.com/package/react-spring)
 - [styled-components](https://yarnpkg.com/package/styled-components)
 - [typescript](https://yarnpkg.com/package/typescript)
 - [uuidv4](https://yarnpkg.com/package/uuidv4)
