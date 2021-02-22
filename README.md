@@ -372,6 +372,16 @@ $ yarn add uuidv4
 ```
 $ yarn add react-spring
 ```
+### Rotas da aplicação
+#### Configurando Rotas
+- Instale a biblioteca `react-router-dom`
+```
+$ yarn add react-router-dom
+```
+- Instale a biblioteca `@types/react-router-dom` como dependência de desenvolvimento
+```
+$ yarn add @types/react-router-dom
+```
 ---
 ## Padrões de Projeto
 
@@ -404,6 +414,7 @@ $ yarn add react-spring
 - [react](https://yarnpkg.com/package/react)
 - [react-dom](https://yarnpkg.com/package/react-dom)
 - [react-icons](https://yarnpkg.com/package/react-icons)
+- [react-router-dom](https://yarnpkg.com/package/react-router-dom)
 - [react-scripts](https://yarnpkg.com/package/react-scripts)
 - [react-spring](https://yarnpkg.com/package/react-spring)
 - [styled-components](https://yarnpkg.com/package/styled-components)
@@ -413,6 +424,7 @@ $ yarn add react-spring
 - [yup](https://yarnpkg.com/package/yup)
 
 #### Dependências de Desenvolvimento
+- [@types/react-router-dom](https://yarnpkg.com/package/@types/react-router-dom)
 - [@types/styled-components](https://yarnpkg.com/package/@types/styled-components)
 - [@types/yup](https://yarnpkg.com/package/@types/yup)
 - [@typescript-eslint/eslint-plugin](https://yarnpkg.com/package/@typescript-eslint/eslint-plugin)
