@@ -7,6 +7,12 @@
 - A aplicação irá consumir a API Back-end Node.js abaixo
   - [Back-end - GoBarber](https://github.com/fabiosvf/bootcamp-gostack-11-nivel-02-iniciando-back-end-do-app)
 
+## Protótipo - GoBarber Web
+
+|SignIn|SignUp|
+|-|-|
+|![SignIn](docs/SignIn.png)|![SignUp](docs/SignUp.png)|
+
 ---
 ## Roteiro
 
